@@ -17,8 +17,6 @@ class ProductFactory extends Factory
             'title' => $this->faker->name(),
             'description' => $this->faker->realText(),
             'price' => $this->faker->numberBetween(75000, 10000000),
-            'thumbnail' => $this->faker->imageUrl(),
-            'thumbnail_alt' => $this->faker->colorName()
         ];
     }
 

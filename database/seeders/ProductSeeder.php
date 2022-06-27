@@ -4,6 +4,9 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 
+use App\Models\Product;
+use App\Models\Image;
+
 class ProductSeeder extends Seeder
 {
     /**
@@ -13,8 +16,9 @@ class ProductSeeder extends Seeder
      */
     public function run()
     {
-        \App\Models\Product::factory(10)->create();
-        \App\Models\Product::factory(5)->withoutDescription()->create();
-        \App\Models\Product::factory(5)->withoutThumbnailAlt()->create();
+        $products = Product::factory(10)->create();
+        $products->each(function (Product $product) {
+            $product->images()->insert(Image::factory(3)->make(['product_id' => $product->id])->toArray());
+        });
     }
 }

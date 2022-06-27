@@ -14,14 +14,17 @@ class ProductResource extends JsonResource
      */
     public function toArray($request)
     {
+        // dd($this->images[0]->src);
+
         return [
             'id' => $this->id,
             'title' => $this->title,
             'description' => $this->description,
             'price' => $this->price,
             'price_html' => $this->price_html,
-            'thumbnail' => $this->thumbnail,
-            'thumbnail_alt' => $this->thumbnail_alt,
+            'thumbnail' => $this->images[0]->src,
+            'thumbnail_alt' => $this->images[0]->alt,
+            'images' => ImageResource::collection($this->images)
         ];
     }
 }

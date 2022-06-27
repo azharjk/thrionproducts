@@ -18,9 +18,8 @@ class CreateProductsTable extends Migration
             $table->string('title', 60);
             $table->text('description')->nullable();
             $table->decimal('price', 10);
+            // FIXME: Should this thing remove and just generate when it requested
             $table->string('price_html')->nullable();
-            $table->string('thumbnail');
-            $table->string('thumbnail_alt')->nullable();
             $table->timestamps();
         });
     }
