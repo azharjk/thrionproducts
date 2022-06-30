@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\OrderController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -23,4 +24,8 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 // Route::apiResource('products', ProductController::class);
 Route::resource('products', ProductController::class)->only([
     'index', 'show'
+]);
+
+Route::resource('orders', OrderController::class)->only([
+    'index', 'store'
 ]);
