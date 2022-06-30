@@ -5,7 +5,6 @@ namespace Database\Seeders;
 use Illuminate\Database\Seeder;
 
 use App\Models\Product;
-use App\Models\Image;
 use App\Models\Order;
 
 class OrderSeeder extends Seeder
@@ -17,10 +16,9 @@ class OrderSeeder extends Seeder
      */
     public function run()
     {
-        $products = Product::factory(5)->create();
+        $products = Product::all()->random(5);
         $products->each(function (Product $product) {
-            $product->images()->insert(Image::factory(3)->make(['product_id' => $product->id])->toArray());
-            $product->order()->create(Order::factory()->make()->toArray());
+            $product->order()->create(Order::factory()->make(['product_id' => $product->id])->toArray());
         });
     }
 }
