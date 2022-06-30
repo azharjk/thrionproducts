@@ -27,13 +27,14 @@ class OrderController extends Controller
      */
     public function store(Request $request)
     {
-        $data = $request->only('product_id', 'customer_name', 'total_price');
+        $data = $request->only('product_id', 'customer_name', 'total_price', 'payment_method');
 
         $order = Order::create([
             'product_id' => $data['product_id'],
             'customer_name' => $data['customer_name'],
             'total_price' => $data['total_price'],
-            'status' => 'NEW'
+            'status' => 'NEW',
+            'payment_method' => $data['payment_method']
         ]);
 
         return new OrderResource($order);

@@ -16,7 +16,8 @@ class OrderFactory extends Factory
         return [
             'customer_name' => $this->faker->name(),
             'status' => $this->faker->randomElement(['NEW', 'SHIPPED', 'DELIVERED', 'CANCELLED']),
-            'total_price' => $this->faker->numberBetween(100000, 9000000)
+            'total_price' => $this->faker->numberBetween(100000, 9000000),
+            'payment_method' => $this->faker->randomElement(['COD', 'TRANSFER'])
         ];
     }
 }

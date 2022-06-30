@@ -14,6 +14,7 @@ class Order extends Model
         'product_id',
         'customer_name',
         'status',
+        'payment_method',
         'total_price',
     ];
 

@@ -19,6 +19,7 @@ class OrderResource extends JsonResource
             'product' => new ProductResource($this->product),
             'customer_name' => $this->customer_name,
             'status' => $this->status,
+            'payment_method' => $this->payment_method,
             'total_price' => $this->total_price,
             'total_price_html' => $this->total_price_html
         ];

@@ -20,6 +20,7 @@ class CreateOrdersTable extends Migration
             $table->foreignIdFor(Product::class);
             $table->string('customer_name');
             $table->enum('status', ['NEW', 'SHIPPED', 'DELIVERED', 'CANCELLED']);
+            $table->enum('payment_method', ['COD', 'TRANSFER']);
             $table->decimal('total_price', 10);
             $table->string('total_price_html')->nullable();
             $table->timestamps();
