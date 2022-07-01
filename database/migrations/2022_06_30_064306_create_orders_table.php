@@ -19,6 +19,8 @@ class CreateOrdersTable extends Migration
             $table->id();
             $table->foreignIdFor(Product::class);
             $table->string('customer_name');
+            $table->string('whatsapp_number');
+            $table->text('address');
             $table->enum('status', ['NEW', 'SHIPPED', 'DELIVERED', 'CANCELLED']);
             $table->enum('payment_method', ['COD', 'TRANSFER']);
             $table->decimal('total_price', 10);

@@ -13,6 +13,8 @@ class Order extends Model
     protected $fillable = [
         'product_id',
         'customer_name',
+        'whatsapp_number',
+        'address',
         'status',
         'payment_method',
         'total_price',

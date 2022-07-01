@@ -18,6 +18,8 @@ class OrderResource extends JsonResource
             'id' => $this->id,
             'product' => new ProductResource($this->product),
             'customer_name' => $this->customer_name,
+            'whatsapp_number' => $this->whatsapp_number,
+            'address' => $this->address,
             'status' => $this->status,
             'payment_method' => $this->payment_method,
             'total_price' => $this->total_price,
