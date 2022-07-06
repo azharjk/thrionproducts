@@ -2,6 +2,10 @@
 
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\Admin\AdminProductController;
+use App\Http\Controllers\Admin\AdminOrderController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,4 +19,13 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
+});
+
+Route::prefix('admin')->name('admin.')->group(function () {
+    Route::get('/', [AdminController::class, 'dashboard'])->name('dashboard');
+
+    Route::resources([
+        'product' => AdminProductController::class,
+        'order' => AdminOrderController::class
+    ]);
 });
