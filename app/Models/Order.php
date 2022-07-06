@@ -32,7 +32,7 @@ class Order extends Model
         });
 
         self::created(function ($model) {
-            Mail::to('sometime.use.this@gmail.com')->send(new OrderCreated($model));
+            // Mail::to('sometime.use.this@gmail.com')->send(new OrderCreated($model));
         });
     }
 
