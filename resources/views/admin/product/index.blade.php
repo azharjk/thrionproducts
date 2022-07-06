@@ -9,16 +9,21 @@
         <div class="section-body">
             <div class="card">
                 <div class="card-body">
-                    <form class="form-inline" action="" method="GET">
-                        <div class="form-group">
-                            <div class="input-group mb-3">
-                                <input type="text" name="search-query" data-width="250" style="width: 250px;" class="form-control" placeholder="Search" aria-label="">
-                                <div class="input-group-append">
-                                    <button class="btn btn-primary" type="submit"><i class="fas fa-search"></i></button>
+                    <div class="d-flex align-items-start">
+                        <form class="" action="" method="GET">
+                            <div class="form-group">
+                                <div class="input-group mb-3">
+                                    <input type="text" name="search-query" data-width="250" style="width: 250px;"
+                                        class="form-control" placeholder="Search" aria-label="">
+                                    <div class="input-group-append">
+                                        <button class="btn btn-primary" type="submit"><i
+                                                class="fas fa-search"></i></button>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </form>
+                        </form>
+                        <a class="btn btn-danger ml-2" href="{{ route('admin.product.index') }}">Reset</a>
+                    </div>
                     <table class="table">
                         <thead>
                             <tr>

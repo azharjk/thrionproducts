@@ -13,9 +13,16 @@ class AdminProductController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $products = Product::paginate(15);
+        $query = Product::query();
+
+        $searchQuery = $request->query('search-query');
+        $query->where('title', 'like', '%'.$searchQuery.'%')
+              ->orWhere('price', 'like', '%'.$searchQuery.'%')
+              ->orWhere('price_html', 'like', '%'.$searchQuery.'%');
+
+        $products = $query->paginate(15)->withQueryString();
         return view('admin.product.index', ['products' => $products]);
     }
 
