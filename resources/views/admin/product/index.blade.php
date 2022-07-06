@@ -48,8 +48,10 @@
                                     <td>{{ $product->price_html }}</td>
                                     <td>{{ $product->created_at }}</td>
                                     <td><a href="#" class="btn btn-icon btn-primary mr-2"><i
-                                                class="far fa-edit"></i></a><a href="#"
-                                            class="btn btn-icon btn-danger"><i class="fa fa-trash"></i></a>
+                                                class="far fa-edit"></i></a>
+                                        <button data-pid="{{ $product->id }}" type="button"
+                                            class="js-delete-product btn btn-icon btn-danger"><i
+                                                class="fa fa-trash"></i></a>
                                     </td>
                                 </tr>
                             @endforeach

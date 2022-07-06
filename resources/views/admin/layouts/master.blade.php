@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
+    <meta content="{{ csrf_token() }}" name="csrf-token">
     <title>Thrion Products</title>
 
     <!-- General CSS Files -->
@@ -11,7 +12,8 @@
     <link rel="stylesheet" href="{{ asset('third_party/stisla-2.2.0/modules/fontawesome/css/all.min.css') }} ">
 
     <!-- Plugins -->
-    <link rel="stylesheet" href="{{ asset('third_party/stisla-2.2.0/modules/bootstrap-social/bootstrap-social.css') }}">
+    <link rel="stylesheet"
+        href="{{ asset('third_party/stisla-2.2.0/modules/bootstrap-social/bootstrap-social.css') }}">
 
     <!-- Template CSS -->
     <link rel="stylesheet" href="{{ asset('third_party/stisla-2.2.0/css/style.css') }}">
@@ -61,10 +63,12 @@
                     <ul class="sidebar-menu">
                         <li class="menu-header">Models</li>
                         <li class="dropdown">
-                            <a href="{{ route('admin.product.index') }}" class="nav-link"><i class="fas fa-table"></i><span>Products</span></a>
+                            <a href="{{ route('admin.product.index') }}" class="nav-link"><i
+                                    class="fas fa-table"></i><span>Products</span></a>
                         </li>
                         <li class="dropdown">
-                            <a href="{{ route('admin.order.index') }}" class="nav-link"><i class="fas fa-table"></i><span>Orders</span></a>
+                            <a href="{{ route('admin.order.index') }}" class="nav-link"><i
+                                    class="fas fa-table"></i><span>Orders</span></a>
                         </li>
                     </ul>
                 </aside>
@@ -102,7 +106,8 @@
     <!-- Template JS File -->
     <script src="{{ asset('third_party/stisla-2.2.0/js/scripts.js') }}"></script>
     <script src="{{ asset('third_party/stisla-2.2.0/js/custom.js') }}"></script>
+
+    <script src="{{ asset('js/app.js') }}"></script>
 </body>
 
 </html>
-
