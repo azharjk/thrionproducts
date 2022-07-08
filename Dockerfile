@@ -11,7 +11,6 @@ RUN composer install
 
 RUN touch database/database.sqlite
 RUN php artisan migrate
-RUN php artisan db:seed --class ProductSeeder
-RUN php artisan db:seed --class OrderSeeder
+RUN php artisan db:seed
 
 CMD ["php", "artisan", "serve", "--host", "0.0.0.0"]
