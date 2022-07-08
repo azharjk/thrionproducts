@@ -40,4 +40,9 @@ class Product extends Model
     {
         return $this->hasOne(Order::class);
     }
+
+    public function displayProduct(): HasOne
+    {
+        return $this->hasOne(DisplayProduct::class);
+    }
 }
