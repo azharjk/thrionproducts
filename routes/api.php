@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CategoriesWithProductsService;
+use App\Http\Controllers\CMSProductController;
 use App\Http\Controllers\DisplayProductController;
 use App\Http\Controllers\OrderController;
 use Illuminate\Http\Request;
@@ -36,3 +37,9 @@ Route::apiResource('orders', OrderController::class)->only([
 Route::apiResource('display-products', DisplayProductController::class)->only([
     'index'
 ]);
+
+Route::prefix('cms')->group(function () {
+    Route::apiResource('products', CMSProductController::class)->only([
+        'index'
+    ]);
+});
