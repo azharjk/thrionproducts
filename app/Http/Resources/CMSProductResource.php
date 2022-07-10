@@ -24,7 +24,8 @@ class CMSProductResource extends JsonResource
             'description' => $this->attributes->description,
             'price' => $this->attributes->price,
             'price_html' => Product::toRupiah($this->attributes->price),
-            'thumbnail' => env('THRION_PRODUCTS_CMS_HOST', 'http://localhost:1337') . $thumbnail,
+            // FIXME: The env cannot be set this is hack for development
+            'thumbnail' => env('THRION_PRODUCTS_CMS_HOST', 'http://192.168.1.22:1337') . $thumbnail,
             // FIXME: Generate better alt
             'thumbnail_alt' => 'Product image',
             'images' => CMSImageResource::collection($images)

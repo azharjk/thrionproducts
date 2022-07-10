@@ -15,7 +15,7 @@ class CMSImageResource extends JsonResource
     public function toArray($request)
     {
         return [
-            'src' => env('THRION_PRODUCTS_CMS_HOST', 'http://localhost:1337') . $this->attributes->url,
+            'src' => env('THRION_PRODUCTS_CMS_HOST', 'http://192.168.1.22:1337') . $this->attributes->url,
             // FIXME: Generate better alt
             'alt' => 'Product image'
         ];
