@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\CategoriesWithProductsService;
 use App\Http\Controllers\CMSDisplayProductController;
+use App\Http\Controllers\CMSOrderController;
 use App\Http\Controllers\CMSProductController;
 use App\Http\Controllers\DisplayProductController;
 use App\Http\Controllers\OrderController;
@@ -46,5 +47,9 @@ Route::prefix('cms')->group(function () {
 
     Route::apiResource('display-products', CMSDisplayProductController::class)->only([
         'index'
+    ]);
+
+    Route::apiResource('orders', CMSOrderController::class)->only([
+        'store'
     ]);
 });
