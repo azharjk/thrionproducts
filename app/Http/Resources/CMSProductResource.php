@@ -15,7 +15,7 @@ class CMSProductResource extends JsonResource
      */
     public function toArray($request)
     {
-        $images = collect($this->attributes->images->data);
+        $images = collect($this->attributes->images->data)->reverse();
         $thumbnail = $images[$images->count() - 1]->attributes->url;
 
         return [
