@@ -41,7 +41,7 @@ Route::apiResource('display-products', DisplayProductController::class)->only([
 
 Route::prefix('cms')->group(function () {
     Route::apiResource('products', CMSProductController::class)->only([
-        'index'
+        'index', 'show'
     ]);
 
     Route::apiResource('display-products', CMSDisplayProductController::class)->only([

@@ -18,4 +18,15 @@ class CMSProductController extends Controller
 
         return CMSProductResource::collection($data);
     }
+
+    public function show(int $id)
+    {
+        $response = $this->http->get('api/products/'.$id, [
+            'query' => 'populate=images'
+        ]);
+
+        $o = json_decode($response->getBody()->getContents());
+
+        return new CMSProductResource($o->data);
+    }
 }
